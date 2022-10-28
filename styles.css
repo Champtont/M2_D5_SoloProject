@@ -13,14 +13,19 @@
   font-family: Fuzzy Bubbles;
   color: var(--blue-color);
 }
+html {
+  height: 100%;
+}
 body {
-  height: 100vh;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  background-color: var(--gray-color);
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--blue-color);
 }
 #container {
   width: 80%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
@@ -33,9 +38,19 @@ body {
   border-radius: 20px;
   height: 70%;
 }
+header {
+  margin-top: 1em;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--orange-color),
+    transparent
+  );
+}
 h1 {
   text-align: center;
   font-size: 30pt;
+  color: var(--offwhite-color);
 }
 #inputs {
   display: flex;
@@ -95,7 +110,7 @@ label {
 #waitinglist {
   margin-top: 1em;
   background-color: white;
-  height: 60%;
+  height: 70%;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 0.5em;
@@ -136,11 +151,17 @@ label {
   padding: 1em;
 }
 h2 {
+  box-sizing: border-box;
+  padding: 0.1em;
+  border-radius: 5px 5px 0px 0px;
   color: var(--orange-color);
+  background-color: var(--gray-color);
+  text-align: center;
 }
 .bcard {
   width: 30%;
   height: 30%;
+  margin-bottom: 5em;
 }
 .scard {
   background-color: var(--offwhite-color);
@@ -149,4 +170,9 @@ h2 {
   border-radius: 5px;
   box-shadow: black 0px 0px 15px;
   padding: 1em;
+}
+/*Classes that exist for Js*/
+.pstyle {
+  font-style: italic;
+  font-weight: bold;
 }

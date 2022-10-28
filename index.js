@@ -3,6 +3,7 @@
 const memName = document.getElementById("memname");
 const addButton = document.getElementById("add");
 const waitList = document.getElementById("waitinglist");
+const assignButton = document.getElementById("asmem");
 //for calculating how many teams
 const plusButton = document.getElementById("plus");
 const minusButton = document.getElementById("minus");
@@ -68,8 +69,25 @@ const removeTeam = () => {
   boxRight.removeChild(boxRight.lastElementChild);
 };
 //Assigning Names and randomize the Array
-const nameArr = document.querySelectorAll("p");
+const Arrays = [];
+const shuffleNames = (arr) => {
+  arr.sort(() => Math.random() - 0.5);
+  return;
+};
 
+const assignName = () => {
+  const nameArr = document.querySelectorAll("p");
+
+  for (let i = 0; i < nameArr.length; i++) {
+    Arrays.push(nameArr[i].innerText);
+  }
+  shuffleNames(Arrays);
+  console.log(Arrays);
+  for (let i = 0; i < nameArr.length; i++) {
+    console.log(nameArr[i].innerText);
+  }
+};
+assignButton.addEventListener("click", assignName);
 //reset button
 const clearForm = () => {
   count = 0;

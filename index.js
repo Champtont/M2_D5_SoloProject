@@ -15,10 +15,14 @@ const resetButton = document.getElementById("reset");
 
 //add name to waiting list
 const addName = () => {
-  const newName = document.createElement("p");
+  newName = document.createElement("p");
   newName.classList.add("pstyle");
   newName.innerText = memName.value;
   waitList.appendChild(newName);
+};
+
+const clear = () => {
+  newName.innerText = "";
 };
 
 addButton.addEventListener("click", addName);
@@ -82,9 +86,9 @@ const assignName = () => {
     Arrays.push(nameArr[i].innerText);
   }
   shuffleNames(Arrays);
-  console.log(Arrays);
+  console.log(Arrays); //the Array is shuffling now!!!
   for (let i = 0; i < nameArr.length; i++) {
-    console.log(nameArr[i].innerText);
+    console.log(nameArr[i].innerText); //This logs the names in order
   }
 };
 assignButton.addEventListener("click", assignName);

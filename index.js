@@ -52,7 +52,7 @@ minusButton.addEventListener("click", decreaseNum);
 //adding and removing Cards
 const addTeam = () => {
   //create the things
-  bigCard = document.createElement("div");
+  const bigCard = document.createElement("div");
   const h2 = document.createElement("h2");
   const smallCard = document.createElement("div");
   //make it work
@@ -65,7 +65,7 @@ const addTeam = () => {
 };
 
 const removeTeam = () => {
-  boxRight.removeChild(bigCard);
+  boxRight.removeChild(boxRight.lastElementChild);
 };
 //reset button
 const clearForm = () => {

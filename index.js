@@ -67,12 +67,20 @@ const addTeam = () => {
 const removeTeam = () => {
   boxRight.removeChild(boxRight.lastElementChild);
 };
+//Assigning Names and randomize the Array
+/*const nameArr = document.querySelectorAll(".pstyle");
+const shuffledNames = nameArr.sort(() => Math.random() - 0.5);*/
+
 //reset button
 const clearForm = () => {
   count = 0;
   numInput.value = count;
   numInput.innerText = numInput.value;
   memName.value = null;
-  waitList.innerHTML = null;
+  // waitList.innerHTML = null;
+  const listedNames = document.querySelectorAll(".pstyle");
+  for (let i = 0; i < listedNames.length; i++) {
+    waitList.removeChild(waitList.lastElementChild);
+  }
 };
 resetButton.addEventListener("click", clearForm);

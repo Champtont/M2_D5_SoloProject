@@ -73,6 +73,13 @@ h1 {
   color: var(--yellow-color);
   font-weight: bold;
 }
+#add:hover {
+  background-color: #222929;
+}
+#add:active {
+  background-color: #75898b;
+  transform: scale(1.05);
+}
 .labelbox {
   display: flex;
   flex-direction: column;
@@ -103,6 +110,15 @@ h1 {
   padding: 0.5em 1em;
   font-weight: bold;
 }
+#plus:hover,
+#minus:hover {
+  background-color: #222929;
+}
+#plus:active,
+#minus:active {
+  background-color: #75898b;
+  transform: scale(1.05);
+}
 label {
   font-weight: bold;
 }
@@ -132,6 +148,13 @@ label {
   border-radius: 5px;
   flex-grow: 2;
 }
+#asmem:hover {
+  background-color: #222929;
+}
+#asmem:active {
+  background-color: #75898b;
+  transform: scale(1.05);
+}
 #reset {
   background-color: var(--red-color);
   color: var(--offwhite-color);
@@ -141,6 +164,13 @@ label {
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 5px;
   flex-grow: 1;
+}
+#reset:hover {
+  background-color: #b1444f;
+}
+#reset:active {
+  background-color: var(--orange-color);
+  transform: scale(1.05);
 }
 /*Right side layout*/
 #boxright {

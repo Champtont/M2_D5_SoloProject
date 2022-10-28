@@ -68,8 +68,7 @@ const removeTeam = () => {
   boxRight.removeChild(boxRight.lastElementChild);
 };
 //Assigning Names and randomize the Array
-/*const nameArr = document.querySelectorAll(".pstyle");
-const shuffledNames = nameArr.sort(() => Math.random() - 0.5);*/
+const nameArr = document.querySelectorAll("p");
 
 //reset button
 const clearForm = () => {
@@ -77,10 +76,13 @@ const clearForm = () => {
   numInput.value = count;
   numInput.innerText = numInput.value;
   memName.value = null;
-  // waitList.innerHTML = null;
   const listedNames = document.querySelectorAll(".pstyle");
   for (let i = 0; i < listedNames.length; i++) {
     waitList.removeChild(waitList.lastElementChild);
+  }
+  const bigCard = document.querySelectorAll(".bcard");
+  for (let i = 0; i < bigCard.length; i++) {
+    removeTeam();
   }
 };
 resetButton.addEventListener("click", clearForm);

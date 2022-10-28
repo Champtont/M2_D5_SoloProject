@@ -15,17 +15,36 @@ const resetButton = document.getElementById("reset");
 
 //add name to waiting list
 const addName = () => {
-  newName = document.createElement("p");
-  newName.classList.add("pstyle");
-  newName.innerText = memName.value;
-  waitList.appendChild(newName);
+  const nameArr = document.querySelectorAll("p");
+
+  for (let i = 0; i < nameArr.length; i++) {
+    Arrays.push(nameArr[i].innerText);
+  }
+  checkList();
+  if (memName.value === "") {
+    alert("You haven't entered a Name");
+    return; //prevent user from entering empty string
+  } else if (Arrays.includes(memName.value) === true) {
+    alert("That member is already on list");
+  } else {
+    newName = document.createElement("p");
+    newName.classList.add("pstyle");
+    newName.innerText = memName.value;
+    waitList.appendChild(newName);
+    clear(); // clears name field upon adding
+    return;
+  }
 };
 
 const clear = () => {
-  newName.innerText = "";
+  memName.value = "";
+};
+//The problem is that you are seaching for an array that doesn't exist until after the assbutton is pressed
+const checkList = () => {
+  Arrays.includes(memName.value);
 };
 
-addButton.addEventListener("click", addName);
+addButton.addEventListener("click", addName, clear);
 //display number of teams
 let count = 0;
 numInput.value = count;
@@ -80,11 +99,6 @@ const shuffleNames = (arr) => {
 };
 
 const assignName = () => {
-  const nameArr = document.querySelectorAll("p");
-
-  for (let i = 0; i < nameArr.length; i++) {
-    Arrays.push(nameArr[i].innerText);
-  }
   shuffleNames(Arrays);
   console.log(Arrays); //the Array is shuffling now!!!
   for (let i = 0; i < nameArr.length; i++) {

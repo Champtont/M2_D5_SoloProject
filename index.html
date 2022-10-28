@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="boxleft">
+        <h1>TEAM GENERATOR</h1>
+        <div id="inputs">
+          <div class="labelbox">
+            <label for="addmem">Add Member</label>
+            <div id="input-button">
+              <input type="text" placeholder="Name" id="memname" />
+              <button id="add">Add</button>
+            </div>
+          </div>
+          <div class="labelbox">
+            <label for="teams">Teams</label>
+            <div id="num-button">
+              <button id="minus">-</button>
+              <input type="number" id="numofteams" disabled />
+              <button id="plus">+</button>
+            </div>
+          </div>
+        </div>
+        <div id="waitinglist"></div>
+        <div id="buttons">
+          <button id="asmem">Assign Memeber</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+      <div id="boxright">
+        <div class="bcard">
+          <h2>Team 1</h2>
+          <div class="scard"></div>
+        </div>
+        <div class="bcard">
+          <h2>Team 2</h2>
+          <div class="scard"></div>
+        </div>
+        <div class="bcard">
+          <h2>Team 3</h2>
+          <div class="scard"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

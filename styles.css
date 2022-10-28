@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap");
+
+:root {
+  --blue-color: #3891a6;
+  --gray-color: #4c5b5c;
+  --yellow-color: #fde74c;
+  --red-color: #db5461;
+  --orange-color: #e3655b;
+  --offwhite-color: #e5edee;
+}
+* {
+  margin: 0;
+  font-family: Fuzzy Bubbles;
+  color: var(--blue-color);
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--gray-color);
+}
+#container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+#boxleft {
+  background-color: var(--offwhite-color);
+  box-sizing: border-box;
+  box-shadow: black 0px 0px 10px;
+  padding: 1em;
+  border-radius: 20px;
+  height: 70%;
+}
+h1 {
+  text-align: center;
+  font-size: 30pt;
+}
+#inputs {
+  display: flex;
+  justify-content: space-between;
+}
+#inputs > div:nth-child(1) {
+  width: 70%;
+}
+#memname {
+  width: 90%;
+  font-size: 12pt;
+  border-radius: 5px 0px 0px 5px;
+  padding: 0.33em;
+  border: none;
+}
+#add {
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  background-color: var(--gray-color);
+  color: var(--yellow-color);
+  font-weight: bold;
+}
+.labelbox {
+  display: flex;
+  flex-direction: column;
+}
+#inputs > div:nth-child(2) {
+  width: 25%;
+}
+#input-button {
+  display: flex;
+}
+#num-button {
+  display: flex;
+}
+#numofteams {
+  text-align: center;
+  background-color: var(--offwhite-color);
+  border: none;
+  width: 40%;
+  color: var(--blue-color);
+  font-weight: bold;
+}
+#plus,
+#minus {
+  background-color: var(--gray-color);
+  color: var(--yellow-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+label {
+  font-weight: bold;
+}
+/*waiting list*/
+#waitinglist {
+  margin-top: 1em;
+  background-color: white;
+  height: 60%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+/*Buttons at bottom left*/
+#buttons {
+  margin-top: 1em;
+  display: flex;
+  gap: 10px;
+}
+#asmem {
+  background-color: var(--gray-color);
+  color: var(--yellow-color);
+  font-weight: bold;
+  font-size: 14pt;
+  border: none;
+  padding: 0.5em 3.5em 0.5em 3.5em;
+  border-radius: 5px;
+  flex-grow: 2;
+}
+#reset {
+  background-color: var(--red-color);
+  color: var(--offwhite-color);
+  font-weight: bold;
+  font-size: 14pt;
+  border: none;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+/*Right side layout*/
+#boxright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 50%;
+  padding: 1em;
+}
+h2 {
+  color: var(--orange-color);
+}
+.bcard {
+  width: 30%;
+  height: 30%;
+}
+.scard {
+  background-color: var(--offwhite-color);
+  color: var(--blue-color);
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: black 0px 0px 15px;
+  padding: 1em;
+}

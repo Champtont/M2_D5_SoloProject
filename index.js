@@ -91,7 +91,9 @@ const removeTeam = () => {
   boxRight.removeChild(boxRight.lastElementChild);
 };
 //Assigning Names and randomize the Array
-const Arrays = [];
+let Arrays = [];
+let teamsArr = [];
+
 const shuffleNames = (arr) => {
   arr.sort(() => Math.random() - 0.5);
   return;
@@ -119,5 +121,6 @@ const clearForm = () => {
   for (let i = 0; i < bigCard.length; i++) {
     removeTeam();
   }
+  Arrays = [];
 };
 resetButton.addEventListener("click", clearForm);

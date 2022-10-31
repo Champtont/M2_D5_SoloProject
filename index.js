@@ -31,6 +31,8 @@ const addName = () => {
     newName.innerText = memName.value;
     waitList.appendChild(newName);
     clear(); // clears name field upon adding
+    shuffleNames(Arrays);
+    console.log(Arrays); //the Array is shuffling now!!!. log Array
     return;
   }
 };
@@ -78,6 +80,7 @@ const addTeam = () => {
   const bigCard = document.createElement("div");
   const h2 = document.createElement("h2");
   const smallCard = document.createElement("div");
+
   //make it work
   bigCard.classList.add("bcard");
   boxRight.appendChild(bigCard);
@@ -85,7 +88,13 @@ const addTeam = () => {
   bigCard.appendChild(h2);
   smallCard.classList.add("scard");
   bigCard.appendChild(smallCard);
-  teamsArr.push(`team ${count}`);
+  /*const bCard = document.querySelector(`#boxright > div:nth-child(${count})`); This is not necessary now*/
+  //pushing teams into array
+  const sCard = document.querySelectorAll(
+    `#boxright div:nth-child(${count}) div`
+  );
+  teamsArr.push(sCard);
+  console.log(teamsArr);
 };
 
 const removeTeam = () => {
@@ -100,13 +109,27 @@ const shuffleNames = (arr) => {
   arr.sort(() => Math.random() - 0.5);
   return;
 };
+let index = 0;
 
 const assignName = () => {
-  shuffleNames(Arrays);
-  console.log(Arrays); //the Array is shuffling now!!!
   for (let i = 0; i < Arrays.length; i++) {
-    console.log(Arrays[i]); //logs individual names
+    console.log(Arrays[index]); //logs individual names . log name from Array
   }
+  //Take Name from list and add it to a team
+  const pnames = document.createElement("p");
+  pnames.innerText = Arrays[index];
+  if (teamsArr[index] === teamsArr.length) {
+    //look here for issue
+    teamsArr[index] = 0;
+  } else {
+    teamsArr[index][0].appendChild(pnames);
+  }
+  index++;
+  console.log(index);
+  return;
+  //I need the Array that I created
+  //I need the waiting list
+  //I need teams
 };
 assignButton.addEventListener("click", assignName);
 //reset button
@@ -124,5 +147,6 @@ const clearForm = () => {
     removeTeam();
   }
   Arrays = [];
+  teamsArr = [];
 };
 resetButton.addEventListener("click", clearForm);

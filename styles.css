@@ -30,9 +30,9 @@ body {
   justify-content: space-between;
   margin-top: 2em;
 }
+
 #boxleft {
-  position: fixed;
-  left: 10%;
+  /*wanted to add position to help user... but it's breaking page*/
   background-color: var(--offwhite-color);
   box-sizing: border-box;
   box-shadow: black 0px 0px 10px;
@@ -176,8 +176,7 @@ label {
 }
 /*Right side layout*/
 #boxright {
-  position: relative;
-  right: 0;
+  /*wanted to add position to help user... but it's breaking page*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

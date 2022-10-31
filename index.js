@@ -13,20 +13,19 @@ const boxRight = document.getElementById("boxright");
 //for clearing the page
 const resetButton = document.getElementById("reset");
 
+const nameArr = document.querySelectorAll("p");
 //add name to waiting list
 const addName = () => {
-  const nameArr = document.querySelectorAll("p");
-
-  for (let i = 0; i < nameArr.length; i++) {
-    Arrays.push(nameArr[i].innerText);
-  }
   checkList();
   if (memName.value === "") {
     alert("You haven't entered a Name");
     return; //prevent user from entering empty string
   } else if (Arrays.includes(memName.value) === true) {
     alert("That member is already on list");
+    clear();
+    return;
   } else {
+    Arrays.push(memName.value);
     newName = document.createElement("p");
     newName.classList.add("pstyle");
     newName.innerText = memName.value;
@@ -101,8 +100,8 @@ const shuffleNames = (arr) => {
 const assignName = () => {
   shuffleNames(Arrays);
   console.log(Arrays); //the Array is shuffling now!!!
-  for (let i = 0; i < nameArr.length; i++) {
-    console.log(nameArr[i].innerText); //This logs the names in order
+  for (let i = 0; i < Arrays.length; i++) {
+    console.log(Arrays[i]); //logs individual names
   }
 };
 assignButton.addEventListener("click", assignName);

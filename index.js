@@ -85,10 +85,12 @@ const addTeam = () => {
   bigCard.appendChild(h2);
   smallCard.classList.add("scard");
   bigCard.appendChild(smallCard);
+  teamsArr.push(`team ${count}`);
 };
 
 const removeTeam = () => {
   boxRight.removeChild(boxRight.lastElementChild);
+  teamsArr.pop(`team ${count}`);
 };
 //Assigning Names and randomize the Array
 let Arrays = [];

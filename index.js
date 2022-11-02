@@ -31,7 +31,6 @@ const addName = () => {
     newName.innerText = memName.value;
     waitList.appendChild(newName);
     clear(); // clears name field upon adding
-    shuffleNames(Arrays);
     console.log(Arrays); //the Array is shuffling now!!!. log Array
     return;
   }
@@ -80,6 +79,7 @@ const addTeam = () => {
   const bigCard = document.createElement("div");
   const h2 = document.createElement("h2");
   const smallCard = document.createElement("div");
+  shuffleNames(Arrays);
 
   //make it work
   bigCard.classList.add("bcard");
@@ -110,24 +110,34 @@ const shuffleNames = (arr) => {
   return;
 };
 let index = 0;
+let bindex = 0;
 
 const assignName = () => {
   for (let i = 0; i < Arrays.length; i++) {
-    console.log(Arrays[index]); //logs individual names . log name from Array
+    console.log(Arrays[i]); //logs individual names . log name from Array
   }
   //Take Name from list and add it to a team
   const pnames = document.createElement("p");
-  pnames.innerText = Arrays[index];
-  if (teamsArr[index] === teamsArr.length) {
+  pnames.innerText = Arrays[bindex];
+  if (bindex === Arrays.length) {
+    alert("there are no more members to assign");
+    return;
+  }
+  if (index === teamsArr.length) {
     //look here for issue
-    teamsArr[index] = 0;
+    index = 0;
+    teamsArr[index][0].appendChild(pnames);
+    index++;
+    bindex++;
+    return;
   } else {
     teamsArr[index][0].appendChild(pnames);
+    index++;
+    bindex++;
   }
-  index++;
   console.log(index);
   return;
-  //I need the Array that I created
+  //need to remove name from waiting list and Array once assigned...
   //I need the waiting list
   //I need teams
 };
@@ -148,5 +158,7 @@ const clearForm = () => {
   }
   Arrays = [];
   teamsArr = [];
+  index = 0;
+  bindex = 0;
 };
 resetButton.addEventListener("click", clearForm);

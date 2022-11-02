@@ -120,7 +120,7 @@ const assignName = () => {
   const pnames = document.createElement("p");
   pnames.innerText = Arrays[bindex];
   if (bindex === Arrays.length) {
-    alert("there are no more members to assign");
+    alert("There are no members to assign");
     return;
   }
   if (index === teamsArr.length) {

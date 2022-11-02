@@ -24,6 +24,7 @@ body {
   background-color: var(--blue-color);
 }
 #container {
+  position: relative;
   width: 80%;
   height: 100%;
   display: flex;
@@ -33,12 +34,14 @@ body {
 
 #boxleft {
   /*wanted to add position to help user... but it's breaking page*/
+  position: fixed;
   background-color: var(--offwhite-color);
   box-sizing: border-box;
   box-shadow: black 0px 0px 10px;
   padding: 1em;
   border-radius: 20px;
   height: 70%;
+  width: 35%;
 }
 header {
   margin-top: 1em;
@@ -177,6 +180,9 @@ label {
 /*Right side layout*/
 #boxright {
   /*wanted to add position to help user... but it's breaking page*/
+  position: sticky;
+  top: 0;
+  right: 10%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

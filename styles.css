@@ -23,6 +23,11 @@ body {
   align-items: center;
   background-color: var(--blue-color);
 }
+h1 {
+  text-align: center;
+  font-size: 30pt;
+  color: var(--offwhite-color);
+}
 #container {
   width: 80%;
   height: 100%;
@@ -43,6 +48,7 @@ body {
   height: 70%;
   width: 40%;
 }
+
 header {
   margin-top: 1em;
   background-image: linear-gradient(
@@ -51,11 +57,6 @@ header {
     var(--orange-color),
     transparent
   );
-}
-h1 {
-  text-align: center;
-  font-size: 30pt;
-  color: var(--offwhite-color);
 }
 #inputs {
   display: flex;
@@ -131,10 +132,19 @@ label {
 #waitinglist {
   margin-top: 1em;
   background-color: white;
-  height: 70%;
+  height: 30%;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 0.5em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#waitinglist::-webkit-scrollbar {
+  width: 5px;
+}
+#waitinglist::-webkit-scrollbar-thumb {
+  background-color: var(--blue-color);
+  border-radius: 5px;
 }
 
 /*Buttons at bottom left*/
@@ -221,7 +231,7 @@ h2 {
 
 /**media queries for screen size!!!*/
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   h1 {
     font-size: 20pt;
   }
@@ -229,17 +239,18 @@ h2 {
     display: flex;
     flex-direction: column;
     width: 90%;
+    margin-top: 1em;
   }
   #boxleft {
-    width: 90%;
+    width: 100%;
     height: auto;
-    position: absolute;
+    position: initial;
   }
   #inputs {
     flex-direction: column;
   }
-  #memname {
-    width: auto;
+  #inputs > div:nth-child(1) {
+    width: 100%;
   }
   #inputs > div:nth-child(2) {
     width: auto;
@@ -249,5 +260,109 @@ h2 {
   #num-button {
     display: flex;
     justify-content: center;
+  }
+  #buttons {
+    flex-direction: column;
+  }
+  #asmem,
+  #reset {
+    font-size: 12pt;
+  }
+  #positionright {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+  #boxright {
+    position: initial;
+    padding: 0;
+  }
+  .bcard {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+}
+@media only screen and (min-width: 400px) {
+  .bcard {
+    width: 45%;
+    margin-bottom: 0.5em;
+  }
+}
+@media only screen and (min-width: 601px) {
+  #positionleft {
+    width: 50%;
+  }
+  #boxleft {
+    height: 50%;
+  }
+  #inputs {
+    flex-direction: column;
+  }
+  #inputs > div:nth-child(1),
+  #inputs > div:nth-child(2) {
+    width: 100%;
+  }
+  #inputs > div:nth-child(2) > label {
+    text-align: center;
+    margin-top: 0.5em;
+  }
+  #num-button {
+    display: flex;
+    justify-content: center;
+  }
+  #buttons {
+    flex-direction: column;
+  }
+  #asmem,
+  #reset {
+    font-size: 10pt;
+  }
+  .bcard {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #boxleft {
+    height: 60%;
+  }
+  #waitinglist {
+    height: 40%;
+  }
+  #asmem,
+  #reset {
+    font-size: 12pt;
+  }
+  .bcard {
+    width: 45%;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #boxleft {
+    height: 60%;
+  }
+  #inputs {
+    flex-direction: row;
+    align-items: center;
+  }
+  #inputs > div:nth-child(2) {
+    width: 35%;
+    margin-left: 0.5em;
+  }
+  #inputs > div:nth-child(2) > label {
+    margin-top: 0;
+  }
+  #waitinglist {
+    height: 55%;
+  }
+  #asmem,
+  #reset {
+    font-size: 15pt;
+  }
+  .bcard {
+    width: 29%;
+    margin-bottom: 0.5em;
   }
 }

@@ -141,7 +141,13 @@ const assignName = () => {
   //I need the waiting list
   //I need teams
 };
-assignButton.addEventListener("click", assignName);
+
+const autoAssignment = () => {
+  for (let i = 0; i < Arrays.length; i++) {
+    assignName();
+  }
+};
+assignButton.addEventListener("click", autoAssignment);
 //reset button
 const clearForm = () => {
   count = 0;

@@ -292,7 +292,7 @@ h2 {
     width: 50%;
   }
   #boxleft {
-    height: 50%;
+    height: 55%;
   }
   #inputs {
     flex-direction: column;
@@ -324,7 +324,7 @@ h2 {
 
 @media only screen and (min-width: 900px) {
   #boxleft {
-    height: 60%;
+    height: 65%;
   }
   #waitinglist {
     height: 40%;
